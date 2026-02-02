@@ -1,8 +1,10 @@
+import 'package:flutter_movie/data/source/movie_data_source.dart';
+
 import '../../domain/entity/movie_entity.dart';
 import '../source/tmdb_data_source.dart';
 
 class MovieRepository {
-  final TmdbDataSource _tmdbDataSource = TmdbDataSource();
+  final MovieDataSource _tmdbDataSource = TmdbDataSource();
 
   Future<List<MovieEntity>> getNowPlaying() async {
     final response = await _tmdbDataSource.getNowPlaying();
